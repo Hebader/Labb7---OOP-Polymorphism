@@ -1,29 +1,37 @@
-﻿namespace Labb7___OOP_Polymorphism
+﻿using System.Threading.Channels;
+
+namespace Labb7___OOP_Polymorphism
 {
     internal class Program
     {
         static void Main(string[] args)
-        {
-            Rektangel rektangel = new Rektangel();
+        {  
             Cirkel cirkel = new Cirkel();
+            Rektangel rektangel = new Rektangel();
             Fyrkant fyrkant = new Fyrkant();
             Parallellogram parallellogram = new Parallellogram();
             Ellips ellips = new Ellips();
 
-            Geometri[] geometri = {rektangel,cirkel,fyrkant,parallellogram,ellips };
+            
+
+            Geometri[] geometri = {cirkel,rektangel, fyrkant,parallellogram,ellips };
             foreach (Geometri geometri1 in geometri)
             {
-                geometri1.Area();
+                double area = geometri1.Area();
+                Console.WriteLine($"Area {geometri1.GetType().Name}: {area}");
+
             }
-            
+           
         }
     }
 
     public class Geometri 
     {
-    public virtual void Area()
+    public virtual double Area()
         {
 
+            return 0.0;
+    
            
         }
     }
@@ -38,10 +46,10 @@
             Widht = 6; 
         }
 
-        public override void Area()
+        public override double Area()
         {
-            double area = 4 * 5;
-            Console.WriteLine("Area Rektangel: " + area);
+            return Lenght * Widht;
+            
 
         }
 
@@ -55,10 +63,11 @@
             Side = 5;
         }
 
-        public override void Area()
+        public override double Area()
         {
             double area = 5 * 5;
-            Console.WriteLine("Area Fyrkant: " + area);
+            return area;
+         
         }
     }
     public class Cirkel : Geometri
@@ -71,11 +80,11 @@
           Radius = 4;
         }
 
-        public override void Area()
+        public override double Area()
         {
-            float _pi = 3.141f;
-            double area = 4 * 4 * _pi;
-            Console.WriteLine("Area Cirkel: " + area);
+           float _pi = 3.141f;
+           double area = 4 * 4 * _pi;
+           return area; 
 
         }
     }
@@ -89,10 +98,10 @@
             Height = 4;
             Base = 5;
         }
-        public override void Area()
+        public override double Area()
         {
            double area = 4 * 5;
-            Console.WriteLine("Area Parallellog: " + area);
+            return area;
         }
     }
     public class Ellips : Geometri
@@ -106,11 +115,11 @@
             b = 9;
         }
 
-        public override void Area()
+        public override double Area()
         {
             float _pi = 3.141f;
             double area = a * b * _pi;
-            Console.WriteLine("Area Ellips: " + area );
+            return area;
 
         } 
 
