@@ -9,12 +9,19 @@
             Fyrkant fyrkant = new Fyrkant();
             Parallellogram parallellogram = new Parallellogram();
             Ellips ellips = new Ellips();
+
+            Geometri[] geometri = {rektangel,cirkel,fyrkant,parallellogram,ellips };
+            foreach (Geometri geometri1 in geometri)
+            {
+                geometri1.Area();
+            }
+            
         }
     }
 
     public class Geometri 
     {
-    public virtual void Area(double area)
+    public virtual void Area()
         {
 
            
@@ -31,9 +38,9 @@
             Widht = 6; 
         }
 
-        public override void Area(double area)
+        public override void Area()
         {
-            area = 4 * 5;
+            double area = 4 * 5;
             Console.WriteLine("Area Rektangel: " + area);
 
         }
@@ -48,9 +55,9 @@
             Side = 5;
         }
 
-        public override void Area(double area)
+        public override void Area()
         {
-            area = 5 * 5;
+            double area = 5 * 5;
             Console.WriteLine("Area Fyrkant: " + area);
         }
     }
@@ -64,10 +71,10 @@
           Radius = 4;
         }
 
-        public override void Area(double area)
+        public override void Area()
         {
             float _pi = 3.141f;
-            area = 4 * 4 * _pi;
+            double area = 4 * 4 * _pi;
             Console.WriteLine("Area Cirkel: " + area);
 
         }
@@ -82,10 +89,9 @@
             Height = 4;
             Base = 5;
         }
-        public override void Area(double area)
+        public override void Area()
         {
-
-            area = 4 * 5;
+           double area = 4 * 5;
             Console.WriteLine("Area Parallellog: " + area);
         }
     }
@@ -100,10 +106,10 @@
             b = 9;
         }
 
-        public override void Area(double area)
+        public override void Area()
         {
             float _pi = 3.141f;
-            area = a * b * _pi;
+            double area = a * b * _pi;
             Console.WriteLine("Area Ellips: " + area );
 
         } 
