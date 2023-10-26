@@ -6,7 +6,7 @@ namespace Labb7___OOP_Polymorphism
     {
         static void Main(string[] args)
         {  
-            Cirkel cirkel = new Cirkel();
+            Cirkel cirkel = new Cirkel(); // Anropar klass
             Rektangel rektangel = new Rektangel();
             Fyrkant fyrkant = new Fyrkant();
             Parallellogram parallellogram = new Parallellogram();
@@ -14,59 +14,58 @@ namespace Labb7___OOP_Polymorphism
 
             
 
-            Geometri[] geometri = {cirkel,rektangel, fyrkant,parallellogram,ellips };
-            foreach (Geometri geometri1 in geometri)
+            Geometri[] geometri = {cirkel,rektangel, fyrkant,parallellogram,ellips}; // En array där alla anropade klasser sätts in
+            foreach (Geometri geometri1 in geometri) // Gör en foreaach för att få en utrskift av alla uträkningar av formarna
             {
-                double area = geometri1.Area();
-                Console.WriteLine($"Area {geometri1.GetType().Name}: {area}");
+                // skapar en double som sparar uträkningarna av varje form
+                double area = geometri1.Area(); // räknar ut arean av varje form i metoden "Area"
+                Console.WriteLine($"Area {geometri1.GetType().Name}: {area}"); // Utskrift
 
             }
            
         }
     }
 
-    public class Geometri 
+    public class Geometri  //Skapar en parentclass
     {
-    public virtual double Area()
+    public virtual double Area() // Gör metoden virutal för att kunna overrida/ändra i andra klasser
         {
 
-            return 0.0;
-    
-           
+            return 0.0;    // Standardvärde
         }
     }
-    public class Rektangel: Geometri 
+    public class Rektangel: Geometri //Rektangel ärver från Geomoteri
     {
-        public double Lenght { get; set; }  
-        public double Widht { get; set; }
+        public double Lenght { get; set; }  // skapar egenskapen Lenght 
+        public double Widht { get; set; } //skapar egenskpaen Widht
 
-        public Rektangel()
+        public Rektangel() // Konstruktor
         {
-            Lenght = 4;
-            Widht = 6; 
+            Lenght = 4; // Sätter ett fast värde
+            Widht = 6;  
         }
 
-        public override double Area()
+        public override double Area() // Överför metod från parentsclass
         {
-            return Lenght * Widht;
+            return Lenght * Widht; // Ändrar typen av beräkningnen
             
 
         }
 
     }
-    public class Fyrkant : Geometri
+    public class Fyrkant : Geometri // Fyrkant ärver från Geometri
     {
-        public double Side { get; set; } 
+        public double Side { get; set; }  // Skapar en egenskap, en sida då det är en kvadrat
 
-        public Fyrkant() 
+        public Fyrkant() //Kostruktor
         {
-            Side = 5;
+            Side = 5; // Sätter ett fast värde
         }
 
-        public override double Area()
+        public override double Area() // Överför metod
         {
-            double area = 5 * 5;
-            return area;
+            double area = 5 * 5; // Bestämmer typ av beräkning
+            return area; // retunerar arean
          
         }
     }
@@ -82,8 +81,8 @@ namespace Labb7___OOP_Polymorphism
 
         public override double Area()
         {
-           float _pi = 3.141f;
-           double area = 4 * 4 * _pi;
+           double _pi = 3.141; // skapar en variabel för "pi"
+           double area = 4 * 4 * _pi; // skapar en varibel för area
            return area; 
 
         }
@@ -117,7 +116,7 @@ namespace Labb7___OOP_Polymorphism
 
         public override double Area()
         {
-            float _pi = 3.141f;
+            double _pi = 3.141f;
             double area = a * b * _pi;
             return area;
 
