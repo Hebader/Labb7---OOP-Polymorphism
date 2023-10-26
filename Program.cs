@@ -19,7 +19,7 @@ namespace Labb7___OOP_Polymorphism
             {
                 // skapar en double som sparar uträkningarna av varje form
                 double area = shape.Area(); // räknar ut arean av varje form i metoden "Area"
-                Console.WriteLine($"Area {shape.GetType().Name}: {area}"); // Utskrift
+                Console.WriteLine($"Area {shape.GetType().Name}: {area}"); // Utskrift, får fram varje forms namn med " GetType().name"
 
             }
            
