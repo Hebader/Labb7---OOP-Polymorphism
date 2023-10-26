@@ -14,12 +14,12 @@ namespace Labb7___OOP_Polymorphism
 
             
 
-            Geometri[] geometri = {cirkel,rektangel, fyrkant,parallellogram,ellips}; // En array där alla anropade klasser sätts in
-            foreach (Geometri geometri1 in geometri) // Gör en foreaach för att få en utrskift av alla uträkningar av formarna
+            Geometri[] Shapes = {cirkel,rektangel, fyrkant,parallellogram,ellips}; // En array där alla anropade klasser sätts in
+            foreach (Geometri shape in Shapes) // Gör en foreaach för att få en utrskift av alla uträkningar av formarna
             {
                 // skapar en double som sparar uträkningarna av varje form
-                double area = geometri1.Area(); // räknar ut arean av varje form i metoden "Area"
-                Console.WriteLine($"Area {geometri1.GetType().Name}: {area}"); // Utskrift
+                double area = shape.Area(); // räknar ut arean av varje form i metoden "Area"
+                Console.WriteLine($"Area {shape.GetType().Name}: {area}"); // Utskrift
 
             }
            
