@@ -12,8 +12,7 @@ namespace Labb7___OOP_Polymorphism
             Parallellogram parallellogram = new Parallellogram();
             Ellips ellips = new Ellips();
 
-            
-
+           
             Geometri[] Shapes = {cirkel,rektangel, fyrkant,parallellogram,ellips}; // En array där alla anropade klasser sätts in
             foreach (Geometri shape in Shapes) // Gör en foreaach för att få en utrskift av alla uträkningar av formarna
             {
@@ -49,7 +48,6 @@ namespace Labb7___OOP_Polymorphism
         {
             return Lenght * Widht; // Ändrar typen av beräkningnen
             
-
         }
 
     }
@@ -105,19 +103,19 @@ namespace Labb7___OOP_Polymorphism
     }
     public class Ellips : Geometri
     {
-        public double a { get; set; }
-        public double b { get; set; }   
+        public double side1 { get; set; }
+        public double side2 { get; set; }   
 
         public Ellips() 
         {
-            a = 7;
-            b = 9;
+            side1= 7;
+            side2 = 9;
         }
 
         public override double Area()
         {
             double _pi = 3.141f;
-            double area = a * b * _pi;
+            double area = side1 * side2 * _pi;
             return area;
 
         } 
