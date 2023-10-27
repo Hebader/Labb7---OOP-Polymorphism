@@ -6,15 +6,15 @@ namespace Labb7___OOP_Polymorphism
     {
         static void Main(string[] args)
         {  
-            Cirkel cirkel = new Cirkel(); // Anropar klass
+            Cirkel cirkel = new Cirkel(); // anropar objekt från klass
             Rektangel rektangel = new Rektangel();
             Fyrkant fyrkant = new Fyrkant();
             Parallellogram parallellogram = new Parallellogram();
             Ellips ellips = new Ellips();
 
            
-            Geometri[] Shapes = {cirkel,rektangel, fyrkant,parallellogram,ellips}; // En array där alla anropade klasser sätts in
-            foreach (Geometri shape in Shapes) // Gör en foreaach för att få en utrskift av alla uträkningar av formarna
+            Geometri[] Shapes = {cirkel,rektangel, fyrkant,parallellogram,ellips}; // En array där alla anropade objekt sätts in
+            foreach (Geometri shape in Shapes) // Gör en foreaach för att få en utrskift av alla uträkningar av formarna/objekten
             {
                 // skapar en double som sparar uträkningarna av varje form
                 double area = shape.Area(); // räknar ut arean av varje form i metoden "Area"
@@ -71,17 +71,17 @@ namespace Labb7___OOP_Polymorphism
     {
         public double Radius { get; set; }
 
-        public Cirkel ()   
+        public Cirkel ()   // Tom konstruktor för att sätta ett fast värde för Radius
         {
 
-          Radius = 4;
+          Radius = 4; // fast värde
         }
 
         public override double Area()
         {
-           double _pi = 3.141; // skapar en variabel för "pi"
-           double area = 4 * 4 * _pi; // skapar en varibel för area
-           return area; 
+           double _pi = 3.141; // skapar en variabel för värdet på "pi"
+           double area = 4 * 4 * _pi; // skapar en varibel för area och räknar ut arean
+           return area; // retunerar arean
 
         }
     }
